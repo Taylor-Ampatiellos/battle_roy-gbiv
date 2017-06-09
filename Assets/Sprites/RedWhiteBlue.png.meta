@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: e1871cda2a53dab43acc7fe3f0150dea
-timeCreated: 1496519348
+guid: ea12ad1c400691e499d7b383b7e79221
+timeCreated: 1497035343
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: RedBlue_0
-    21300002: RedBlue_1
+    21300000: RedWhiteBlue_0
+    21300002: RedWhiteBlue_1
+    21300004: RedWhiteBlue_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -128,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RedBlue_0
+      name: RedWhiteBlue_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,10 +142,23 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: RedBlue_1
+      name: RedWhiteBlue_1
       rect:
         serializedVersion: 2
         x: 250
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RedWhiteBlue_2
+      rect:
+        serializedVersion: 2
+        x: 500
         y: 0
         width: 250
         height: 250

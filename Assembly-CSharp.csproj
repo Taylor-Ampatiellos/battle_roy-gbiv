@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ColorChange.cs" />
      <Compile Include="Assets\Scripts\MovementP1.cs" />
      <Compile Include="Assets\Scripts\MovementP2.cs" />
  <Reference Include="Facebook.Unity.Settings">
