@@ -18,8 +18,6 @@ public class ColorChange : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 
-		Debug.Log ("HERE");
-
 		if (other.gameObject.name == "Player1") {
 			anim.SetInteger ("Color", 1);
 		}
