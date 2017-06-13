@@ -22,6 +22,8 @@ public class Movement : MonoBehaviour {
 	private float originalDrag;
 	private Vector3 originalScale;
 
+	private bool falling;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -29,6 +31,7 @@ public class Movement : MonoBehaviour {
 		originalScale = transform.localScale;
 		originalSpeed = speed;
 		originalDrag = drag;
+		falling = false;
 	}
 	
 	// Update is called once per frame
@@ -50,17 +53,14 @@ public class Movement : MonoBehaviour {
 		}
 
 		if (transform.localScale.x <= 0) {
+			falling = false;
 			speed = originalSpeed;
 			transform.position = respawn;
 			transform.localScale = originalScale;
 			rb.drag = originalDrag;
 		}
-	}
 
-	void OnTriggerStay2D (Collider2D other) {
-		if (other.gameObject.tag == "Pit" && transform.localScale.x > 0) {
-			rb.drag = fallDrag;
-			speed = fallSpeed;
+		if (falling) {
 			transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * getSmaller;
 		}
 	}
@@ -70,6 +70,12 @@ public class Movement : MonoBehaviour {
 			transform.localScale += new Vector3 (1, 1, 1) / 5;
 			Destroy (other.gameObject);
 			StartCoroutine ("Expand_WearOff");
+		}
+
+		if (other.gameObject.tag == "Pit") {
+			falling = true;
+			rb.drag = fallDrag;
+			speed = fallSpeed;
 		}
 	}
 
