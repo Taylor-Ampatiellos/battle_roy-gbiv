@@ -64,4 +64,17 @@ public class Movement : MonoBehaviour {
 			transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * getSmaller;
 		}
 	}
+
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.gameObject.tag == "PU_Expand") {
+			transform.localScale += new Vector3 (1, 1, 1) / 5;
+			Destroy (other.gameObject);
+			StartCoroutine ("Expand_WearOff");
+		}
+	}
+
+	IEnumerator Expand_WearOff () {
+		yield return new WaitForSeconds (5);
+		transform.localScale = originalScale;
+	}
 }
