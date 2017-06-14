@@ -34,8 +34,8 @@ public class Timer : MonoBehaviour {
 		p1_points = GameObject.FindGameObjectsWithTag ("p1_point");
 		p2_points = GameObject.FindGameObjectsWithTag ("p2_point");
 
-		p1_score = p1_points.Length / 2;
-		p2_score = p2_points.Length / 2;
+		p1_score = p1_points.Length;
+		p2_score = p2_points.Length;
 
 		p1.text = "P1 Score:" + "\n" + p1_score.ToString();
 		p2.text = "P2 Score:" + "\n" + p2_score.ToString();
@@ -47,14 +47,16 @@ public class Timer : MonoBehaviour {
 			yield return new WaitForSeconds (1);
 		}
 
-		//tallyScore ();
+		winner ();
 	}
 
-	/*void tallyScore () {
-		p1_points = GameObject.FindGameObjectsWithTag ("p1_point");
-		p2_points = GameObject.FindGameObjectsWithTag ("p2_point");
-
-		Debug.Log (p1_points.Length / 2);
-		Debug.Log (p2_points.Length / 2);
-	}*/
+	void winner () {
+		if (p1_score > p2_score) {
+			number.text = "PLAYER 1 WINS!!!";
+		} else if (p2_score > p1_score) {
+			number.text = "PLAYER 2 WINS!!!";
+		} else {
+			number.text = "IT'S A TIE!!!";
+		}
+	}
 }
