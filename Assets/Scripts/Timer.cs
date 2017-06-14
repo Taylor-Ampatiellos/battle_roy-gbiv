@@ -6,18 +6,39 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-	Text number;
+	public GameObject p1_text;
+	public GameObject p2_text;
+
+	private Text number;
+	private Text p1;
+	private Text p2;
+
 	public int roundLength;
+
+	private GameObject[] p1_points;
+	private GameObject[] p2_points;
+
+	private int p1_score;
+	private int p2_score;
 
 	// Use this for initialization
 	void Start () {
 		number = GetComponent<Text> ();
+		p1 = p1_text.GetComponent<Text> ();
+		p2 = p2_text.GetComponent<Text> ();
 		StartCoroutine ("CountDown");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		p1_points = GameObject.FindGameObjectsWithTag ("p1_point");
+		p2_points = GameObject.FindGameObjectsWithTag ("p2_point");
+
+		p1_score = p1_points.Length / 2;
+		p2_score = p2_points.Length / 2;
+
+		p1.text = "P1 Score:" + "\n" + p1_score.ToString();
+		p2.text = "P2 Score:" + "\n" + p2_score.ToString();
 	}
 
 	IEnumerator CountDown () {
@@ -25,5 +46,15 @@ public class Timer : MonoBehaviour {
 			number.text = i.ToString();
 			yield return new WaitForSeconds (1);
 		}
+
+		//tallyScore ();
 	}
+
+	/*void tallyScore () {
+		p1_points = GameObject.FindGameObjectsWithTag ("p1_point");
+		p2_points = GameObject.FindGameObjectsWithTag ("p2_point");
+
+		Debug.Log (p1_points.Length / 2);
+		Debug.Log (p2_points.Length / 2);
+	}*/
 }

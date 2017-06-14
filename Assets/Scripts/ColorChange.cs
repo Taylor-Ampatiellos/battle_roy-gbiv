@@ -19,10 +19,12 @@ public class ColorChange : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 
 		if (other.gameObject.name == "Player1") {
+			transform.tag = "p1_point";
 			anim.SetInteger ("Color", 1);
 		}
 
 		if (other.gameObject.name == "Player2") {
+			transform.tag = "p2_point";
 			anim.SetInteger ("Color", 2);
 		}
 	}
