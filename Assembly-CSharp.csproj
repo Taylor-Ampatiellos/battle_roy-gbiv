@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ColorChange.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/MasterBuilder/Documents/Original Games/MyGames/Battle Roy-GBIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
