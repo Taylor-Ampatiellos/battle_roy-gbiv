@@ -1,0 +1,30 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon (TM) RX 480 Graphics (ID=0x67df)
+    Vendor:   ATI
+    VRAM:     3072 MB
+    Driver:   22.19.165.512
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.016 seconds
+Platform assembly: C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\MasterBuilder\Documents\Original Games\MyGames\Battle Roy-GBIV\Builds\2017_06_14\Battle Roy-GBIV_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.021662 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1120 -> priority: 1 
+  Thread -> id: c64 -> priority: 1 
