@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class Movement_Sing : MonoBehaviour {
 
 	private Rigidbody2D rb;
 
@@ -33,9 +33,10 @@ public class Movement : MonoBehaviour {
 		originalDrag = drag;
 		falling = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+
 		if (Input.GetKey(up)) {
 			rb.AddForce (transform.up * speed);
 		}

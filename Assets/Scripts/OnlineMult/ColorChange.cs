@@ -18,14 +18,15 @@ public class ColorChange : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 
-		if (other.gameObject.name == "Player1") {
+		if (other.gameObject.tag == "Player") {
 			transform.tag = "p1_point";
-			anim.SetInteger ("Color", 1);
+			Color col = other.gameObject.GetComponent<MeshRenderer> ().material.color;
+			gameObject.GetComponent<Renderer> ().material.color = col;
 		}
 
 		if (other.gameObject.name == "Player2") {
 			transform.tag = "p2_point";
-			anim.SetInteger ("Color", 2);
+			//anim.SetInteger ("Color", 2);
 		}
 	}
 }
