@@ -12,6 +12,7 @@ public class Movement : NetworkBehaviour {
 	public string left;
 	public string down;
 	public string right;
+
 	public float speed;
 	public float fallSpeed;
 	public float drag;

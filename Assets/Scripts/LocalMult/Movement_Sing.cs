@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement_Sing : MonoBehaviour {
 
 	private Rigidbody2D rb;
+	private Powerup_Spawner PU_spawn;
 
 	public string up;
 	public string left;
@@ -32,6 +33,7 @@ public class Movement_Sing : MonoBehaviour {
 		originalSpeed = speed;
 		originalDrag = drag;
 		falling = false;
+		PU_spawn = GameObject.FindGameObjectWithTag ("BoardArea").GetComponent<Powerup_Spawner> ();
 	}
 
 	// Update is called once per frame
@@ -83,5 +85,6 @@ public class Movement_Sing : MonoBehaviour {
 	IEnumerator Expand_WearOff () {
 		yield return new WaitForSeconds (5);
 		transform.localScale = originalScale;
+		PU_spawn.add_Expand_PU();
 	}
 }
