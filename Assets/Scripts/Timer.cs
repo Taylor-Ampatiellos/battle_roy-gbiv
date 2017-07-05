@@ -18,8 +18,8 @@ public class Timer : MonoBehaviour {
 	private GameObject[] p1_points;
 	private GameObject[] p2_points;
 
-	private int p1_score;
-	private int p2_score;
+	public int p1_score;
+	public int p2_score;
 
 	// Use this for initialization
 	void Start () {
