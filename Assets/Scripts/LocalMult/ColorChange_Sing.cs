@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class ColorChange_Sing : MonoBehaviour {
 
-	Animator anim;
+	public Material Tile1;
+	public Material Tile2;
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
+		Tile1.color = GameObject.FindGameObjectWithTag ("Player1").GetComponent<MeshRenderer> ().material.color;
+		Tile1.EnableKeyword ("_EMISSION");
+		Tile1.SetColor ("_EmissionColor", GameObject.FindGameObjectWithTag ("Player1").GetComponent<MeshRenderer> ().material.color);
+
+		Tile2.color = GameObject.FindGameObjectWithTag ("Player2").GetComponent<MeshRenderer> ().material.color;
+		Tile2.EnableKeyword ("_EMISSION");
+		Tile2.SetColor ("_EmissionColor", GameObject.FindGameObjectWithTag ("Player2").GetComponent<MeshRenderer> ().material.color);
 	}
 	
 	// Update is called once per frame
@@ -17,15 +24,15 @@ public class ColorChange_Sing : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
-
+		
 		if (other.gameObject.name == "Player1") {
 			transform.tag = "p1_point";
-			anim.SetInteger ("Color", 1);
+			gameObject.GetComponent<Renderer> ().material = Tile1;
 		}
 
 		if (other.gameObject.name == "Player2") {
 			transform.tag = "p2_point";
-			anim.SetInteger ("Color", 2);
+			gameObject.GetComponent<Renderer> ().material = Tile2;
 		}
 	}
 }

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PercentageBar : MonoBehaviour {
 
-	float fillAmt;
 	Image image;
 	Timer ScoreKeep;
 
@@ -15,7 +14,6 @@ public class PercentageBar : MonoBehaviour {
 
 	void Start() {
 		image = GetComponent<Image>();
-		fillAmt = 0.5f;
 		ScoreKeep = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<Timer> ();
 	}
 
