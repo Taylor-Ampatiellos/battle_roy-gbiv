@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Color_Player1.cs" />
      <Compile Include="Assets\Scripts\LocalMult\ColorChange_Sing.cs" />
      <Compile Include="Assets\Scripts\LocalMult\Movement_Sing.cs" />
      <Compile Include="Assets\Scripts\LocalMult\PercentageBar.cs" />
