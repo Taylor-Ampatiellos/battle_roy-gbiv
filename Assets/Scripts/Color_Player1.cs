@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Color_Player1 : MonoBehaviour {
 
-	public Material Tile1;
+	private Material Tile1;
 	private Color player_color;
 	private Collider clicked;
 
@@ -13,7 +13,7 @@ public class Color_Player1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Tile1 = GameObject.FindGameObjectWithTag ("GameSettings").GetComponent<Settings>().Tile1;
 	}
 
 	// Update is called once per frame
@@ -36,6 +36,7 @@ public class Color_Player1 : MonoBehaviour {
 			Tile1.color = player_color;
 			Tile1.EnableKeyword ("_EMISSION");
 			Tile1.SetColor ("_EmissionColor", player_color);
+			DontDestroyOnLoad (Tile1);
 		
 		}
 	}

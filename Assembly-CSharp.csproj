@@ -50,12 +50,11 @@
      <Compile Include="Assets\Scripts\LocalMult\ColorChange_Sing.cs" />
      <Compile Include="Assets\Scripts\LocalMult\Movement_Sing.cs" />
      <Compile Include="Assets\Scripts\LocalMult\PercentageBar.cs" />
-     <Compile Include="Assets\Scripts\LocalStart.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\OnlineMult\ColorChange.cs" />
      <Compile Include="Assets\Scripts\OnlineMult\Movement.cs" />
      <Compile Include="Assets\Scripts\Powerup_Spawner.cs" />
-     <Compile Include="Assets\Scripts\Reset.cs" />
+     <Compile Include="Assets\Scripts\Settings.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/MasterBuilder/Documents/Original Games/MyGames/Battle Roy-GBIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
