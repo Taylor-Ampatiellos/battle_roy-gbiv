@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour {
 
 	public GameObject p1_text;
 	public GameObject p2_text;
+	public Transform reset;
 
 	private Text number;
 	private Text p1;
@@ -23,6 +24,7 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 1.0f;
 		number = GetComponent<Text> ();
 		p1 = p1_text.GetComponent<Text> ();
 		p2 = p2_text.GetComponent<Text> ();
@@ -39,6 +41,7 @@ public class Timer : MonoBehaviour {
 
 		p1.text = "P1 Score:" + "\n" + p1_score.ToString();
 		p2.text = "P2 Score:" + "\n" + p2_score.ToString();
+
 	}
 
 	IEnumerator CountDown () {
@@ -48,6 +51,8 @@ public class Timer : MonoBehaviour {
 		}
 
 		winner ();
+		Instantiate(reset, new Vector3(4.5f, 0, 0), Quaternion.identity);
+		Time.timeScale = 0.0f;
 	}
 
 	void winner () {
