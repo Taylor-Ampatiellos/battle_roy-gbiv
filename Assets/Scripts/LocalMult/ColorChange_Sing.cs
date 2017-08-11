@@ -27,13 +27,12 @@ public class ColorChange_Sing : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
-		
-		if (other.gameObject.name == "Player1") {
+		if (other.gameObject.tag == "Player1") {
 			transform.tag = "p1_point";
 			gameObject.GetComponent<Renderer> ().material = Tile1;
 		}
 
-		if (other.gameObject.name == "Player2") {
+		if (other.gameObject.tag == "Player2") {
 			transform.tag = "p2_point";
 			gameObject.GetComponent<Renderer> ().material = Tile2;
 		}

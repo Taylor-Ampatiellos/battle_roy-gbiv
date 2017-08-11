@@ -6,11 +6,13 @@ public class Movement_Sing : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private Powerup_Spawner PU_spawn;
+	private CircleCollider2D Bomb;
 
 	public string up;
 	public string left;
 	public string down;
 	public string right;
+	public string bomb;
 	public float speed;
 	public float fallSpeed;
 	public float drag;
@@ -21,6 +23,7 @@ public class Movement_Sing : MonoBehaviour {
 
 	private float originalSpeed;
 	private float originalDrag;
+	private float originalRadius;
 	private Vector3 originalScale;
 
 	private bool falling;
@@ -34,6 +37,8 @@ public class Movement_Sing : MonoBehaviour {
 		originalDrag = drag;
 		falling = false;
 		PU_spawn = GameObject.FindGameObjectWithTag ("BoardArea").GetComponent<Powerup_Spawner> ();
+		Bomb = transform.GetChild(0).GetComponent<CircleCollider2D> ();
+		originalRadius = Bomb.radius;
 	}
 
 	// Update is called once per frame
@@ -66,9 +71,15 @@ public class Movement_Sing : MonoBehaviour {
 		if (falling) {
 			transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * getSmaller;
 		}
+
+		if (Input.GetKey(bomb)) {
+			Bomb.radius = 3;
+		} else {
+			Bomb.radius = originalRadius;
+		}
 	}
 
-	void OnTriggerEnter2D (Collider2D other) {
+	void OnTriggerStay2D (Collider2D other) {
 		if (other.gameObject.tag == "PU_Expand") {
 			transform.localScale += new Vector3 (1, 1, 1) / 5;
 			Destroy (other.gameObject);
@@ -76,9 +87,12 @@ public class Movement_Sing : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag == "Pit") {
-			falling = true;
-			rb.drag = fallDrag;
-			speed = fallSpeed;
+			if (Bomb.radius == originalRadius) {
+				falling = true;
+				rb.drag = fallDrag;
+				speed = fallSpeed;
+			}
+		
 		}
 	}
 
