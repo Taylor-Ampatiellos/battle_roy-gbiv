@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Instantiate(start, new Vector3(4.5f, 0, 0), Quaternion.identity);
+		Instantiate(start, new Vector3(3.5f, 0, 0), Quaternion.identity);
 	}
 	
 	// Update is called once per frame

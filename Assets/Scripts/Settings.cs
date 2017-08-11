@@ -25,6 +25,8 @@ public class Settings : MonoBehaviour {
 			if (Physics.Raycast (ray, out hit)) {
 				if (hit.collider.gameObject.tag == "Reset") {
 					SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+				} if (hit.collider.gameObject.tag == "Menu") {
+					SceneManager.LoadScene ("Menu");
 				} else if (hit.collider.gameObject.tag == "Start_Local") {
 					SceneManager.LoadScene ("Local");
 				}

@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour {
 	public GameObject p1_text;
 	public GameObject p2_text;
 	public Transform reset;
+	public Transform menu;
 
 	private Text number;
 	private Text p1;
@@ -51,7 +52,8 @@ public class Timer : MonoBehaviour {
 		}
 
 		winner ();
-		Instantiate(reset, new Vector3(4.5f, 0, 0), Quaternion.identity);
+		Instantiate(reset, new Vector3(4.25f, 1, 0), Quaternion.identity);
+		Instantiate(menu, new Vector3(4.25f, -1, 0), Quaternion.identity);
 		Time.timeScale = 0.0f;
 	}
 
