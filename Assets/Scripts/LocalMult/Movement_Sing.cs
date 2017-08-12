@@ -21,6 +21,7 @@ public class Movement_Sing : MonoBehaviour {
 
 	public Vector2 respawn;
 
+	private int num_bombs;
 	private float originalSpeed;
 	private float originalDrag;
 	private float originalRadius;
@@ -28,7 +29,7 @@ public class Movement_Sing : MonoBehaviour {
 
 	private bool falling;
 
-	// Use this for initialization
+	// Set starting variables
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		rb.drag = drag;
@@ -39,11 +40,12 @@ public class Movement_Sing : MonoBehaviour {
 		PU_spawn = GameObject.FindGameObjectWithTag ("BoardArea").GetComponent<Powerup_Spawner> ();
 		Bomb = transform.GetChild(0).GetComponent<CircleCollider2D> ();
 		originalRadius = Bomb.radius;
+		num_bombs = 0;
 	}
-
-	// Update is called once per frame
+		
 	void Update () {
 
+		// Four-way movement
 		if (Input.GetKey(up)) {
 			rb.AddForce (transform.up * speed);
 		}
@@ -60,6 +62,7 @@ public class Movement_Sing : MonoBehaviour {
 			rb.AddForce (Vector2.right * speed);
 		}
 
+		// Respawn upon falling into pit
 		if (transform.localScale.x <= 0) {
 			falling = false;
 			speed = originalSpeed;
@@ -68,37 +71,50 @@ public class Movement_Sing : MonoBehaviour {
 			rb.drag = originalDrag;
 		}
 
+		// Falling scale change
 		if (falling) {
 			transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * getSmaller;
 		}
 
-		if (Input.GetKey(bomb)) {
-			Bomb.radius = 3;
+		// Bomb
+		if (Input.GetKeyDown(bomb)) {
+			if (num_bombs > 0) {
+				Bomb.radius = 3;
+				num_bombs--;
+			}
 		} else {
 			Bomb.radius = originalRadius;
 		}
 	}
 
 	void OnTriggerStay2D (Collider2D other) {
+		// Pick up powerups
 		if (other.gameObject.tag == "PU_Expand") {
 			transform.localScale += new Vector3 (1, 1, 1) / 5;
 			Destroy (other.gameObject);
 			StartCoroutine ("Expand_WearOff");
 		}
 
+		if (other.gameObject.tag == "PU_Bomb") {
+			num_bombs++;
+			Destroy (other.gameObject);
+			PU_spawn.decrease_count();
+		}
+
+		// Detect pits
 		if (other.gameObject.tag == "Pit") {
 			if (Bomb.radius == originalRadius) {
 				falling = true;
 				rb.drag = fallDrag;
 				speed = fallSpeed;
 			}
-		
 		}
 	}
 
+	// Powerup wear off
 	IEnumerator Expand_WearOff () {
 		yield return new WaitForSeconds (5);
 		transform.localScale = originalScale;
-		PU_spawn.add_Expand_PU();
+		PU_spawn.decrease_count();
 	}
 }
