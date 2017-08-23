@@ -55,7 +55,6 @@
      <Compile Include="Assets\Scripts\LocalMult\ColorChange_Sing.cs" />
      <Compile Include="Assets\Scripts\LocalMult\Movement_Sing.cs" />
      <Compile Include="Assets\Scripts\LocalMult\PercentageBar.cs" />
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\OnlineMult\ColorChange.cs" />
      <Compile Include="Assets\Scripts\OnlineMult\Movement.cs" />
      <Compile Include="Assets\Scripts\Powerup_Spawner.cs" />
