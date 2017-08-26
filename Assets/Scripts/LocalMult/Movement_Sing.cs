@@ -29,6 +29,8 @@ public class Movement_Sing : MonoBehaviour {
 
 	private bool falling;
 
+	private string[] Player_Inputs;
+
 	// Set starting variables
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -41,24 +43,39 @@ public class Movement_Sing : MonoBehaviour {
 		Bomb = transform.GetChild(0).GetComponent<CircleCollider2D> ();
 		originalRadius = Bomb.radius;
 		num_bombs = 0;
+
+		Player_Inputs = new string[2];
+
+		if (tag == "Player1") {
+			Player_Inputs [0] = "VerticalP1";
+			Player_Inputs [1] = "HorizontalP1";
+		}
+
+		if (tag == "Player2") {
+			Player_Inputs [0] = "VerticalP2";
+			Player_Inputs [1] = "HorizontalP2";
+		}
+
+
+
 	}
 		
 	void Update () {
 
 		// Four-way movement
-		if (Input.GetKey(up)) {
+		if (Input.GetAxis(Player_Inputs [0]) > 0) {
 			rb.AddForce (transform.up * speed);
 		}
 
-		if (Input.GetKey(left)) {
+		if (Input.GetAxis(Player_Inputs [0]) < 0) {
+			rb.AddForce (Vector2.down * speed);
+		}
+
+		if (Input.GetAxis(Player_Inputs [1]) < 0) {
 			rb.AddForce (Vector2.left * speed);
 		}
 
-		if (Input.GetKey(down)) {
-			rb.AddForce (Vector2.down * speed);
-		}
-			
-		if (Input.GetKey (right)) {
+		if (Input.GetAxis(Player_Inputs [1]) > 0) {
 			rb.AddForce (Vector2.right * speed);
 		}
 

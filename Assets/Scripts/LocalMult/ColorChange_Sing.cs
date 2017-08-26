@@ -11,14 +11,6 @@ public class ColorChange_Sing : MonoBehaviour {
 	void Start () {
 		Tile1 = GameObject.FindGameObjectWithTag ("GameSettings").GetComponent<Settings>().Tile1;
 		Tile2 = GameObject.FindGameObjectWithTag ("GameSettings").GetComponent<Settings>().Tile2;
-
-		//Tile1.color = GameObject.FindGameObjectWithTag ("Player1").GetComponent<MeshRenderer> ().material.color;
-		//Tile1.EnableKeyword ("_EMISSION");
-		//Tile1.SetColor ("_EmissionColor", GameObject.FindGameObjectWithTag ("Player1").GetComponent<MeshRenderer> ().material.color);
-
-		//Tile2.color = GameObject.FindGameObjectWithTag ("Player2").GetComponent<MeshRenderer> ().material.color;
-		//Tile2.EnableKeyword ("_EMISSION");
-		//Tile2.SetColor ("_EmissionColor", GameObject.FindGameObjectWithTag ("Player2").GetComponent<MeshRenderer> ().material.color);
 	}
 	
 	// Update is called once per frame
