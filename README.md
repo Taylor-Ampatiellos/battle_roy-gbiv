@@ -15,5 +15,5 @@ Efforts to add contoller compatability are underway and as such movement may fee
 This should hopefully be remedied in the next update.
 
 Controls:
-     Player 1: Movement: WASD, Bomb: b
-	   Player 2: Movement: IJKL, Bomb: y
+Player 1: Movement: WASD, Bomb: b
+Player 2: Movement: IJKL, Bomb: y
