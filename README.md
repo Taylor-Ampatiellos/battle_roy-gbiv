@@ -14,6 +14,6 @@ adding a flipping animation to the tiles changing color, and making the game pla
 Efforts to add contoller compatability are underway and as such movement may feel a bit more slippery than intended. 
 This should hopefully be remedied in the next update.
 
-Controls:
+Controls: \n
 Player 1: Movement: WASD, Bomb: b
 Player 2: Movement: IJKL, Bomb: y
